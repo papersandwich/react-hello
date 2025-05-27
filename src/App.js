@@ -1,3 +1,43 @@
+import { useState, useEffect } from "react";
+import "./App.css";
+
+function App() {
+  //const countState = useState(10);
+  //const count = countState[0];
+  //const setCount = countState[1];
+
+  const [count, setCount] = useState(10);
+
+  useEffect(() => {
+    console.log("component did mount!");
+  }, []);
+
+  useEffect(() => {
+    console.log("ccount has been update");
+  }, [count]);
+
+  useEffect(() => {
+    console.log("Will be run everytime");
+  });
+
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  const multiply = () => {};
+
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button onClick={increment}>Increment</button>
+      <button onclikc={multiply}>X</button>
+    </div>
+  );
+}
+
+export default App;
+
+/*
 import React, {Component} from 'react';
 import './App.css';
 
@@ -69,3 +109,4 @@ class App extends Component {
 }
 
 export default App;
+*/
